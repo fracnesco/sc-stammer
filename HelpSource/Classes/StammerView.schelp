@@ -1,0 +1,22 @@
+TITLE:: StammerView
+summary:: Stammer's display
+categories:: Libraries>Stammer
+related:: Classes/Stammer, Classes/FxParamView, Classes/FxParamPanel
+
+DESCRIPTION::
+What link::Classes/FxParamPanel:: puts at the top of Stammer's window. In it, drag for where in the interval it goes; the wheel for how long it holds; the bars are the slices, falling and fading as the settings say, and light up while it is really going.
+
+It draws from the object's settings and the replies its meters bring, so it is only live while the window is running; link::Classes/FxParamView:: has the rest.
+
+CLASSMETHODS::
+
+METHOD:: new
+ARGUMENT:: unit
+The link::Classes/Stammer::.
+ARGUMENT:: parent
+A view to go in.
+
+INSTANCEMETHODS::
+
+METHOD:: hint
+What the hint bar says over it.

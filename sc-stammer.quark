@@ -1,0 +1,11 @@
+(
+	name: "Stammer",
+	summary: "a beat repeat with chance, pitch fall, decay, reverse and a filter on the repeats, as a UGen and as an object, with a window",
+	version: "0.1.0",
+	author: "Francesco Corvi",
+	url: "https://github.com/fracnesco/sc-stammer.git",
+	license: "MIT",
+	copyright: "Copyright (c) 2026 Francesco Corvi",
+	schelp: "HelpSource",
+	dependencies: ["https://github.com/fracnesco/sc-fx-kit.git"]
+)
