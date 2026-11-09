@@ -33,6 +33,13 @@ Stammer : FxParamUnit {
 	*gridNames { ^this.grids.clump(2).collect(_.first) }
 	*gridBeats { ^this.grids.clump(2).collect(_.last) }
 
+	// parameters renamed on 2026-11-08 so each is a free Tidal word (old -> new):
+	// old presets, sessions and code still reach them
+	*renamed { ^(reverse: \backwards) }
+
+	// what a Tidal pattern may move through SuperDirtGUI, event by event
+	*tidalParams { ^#[\chance, \hold, \grid, \gridVary, \decay, \pitchFall, \backwards, \filterOn, \filterFreq, \filterWidth, \level] }
+
 	*params {
 		// labels, sections, sizes and hints are the window's (sc-fx-ui, 2026-11-09);
 		// the order and the keys are the nodeMaps' - append, never reorder
