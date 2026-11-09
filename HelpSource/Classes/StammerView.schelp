@@ -1,10 +1,29 @@
 TITLE:: StammerView
 summary:: Stammer's display
 categories:: Libraries>Stammer
-related:: Classes/Stammer, Classes/FxParamView, Classes/FxParamPanel
+related:: Classes/Stammer, Classes/FxParamView, Classes/FxDevicePanel
 
 DESCRIPTION::
-What link::Classes/FxParamPanel:: puts at the top of Stammer's window. In it, drag for where in the interval it goes; the wheel for how long it holds; the bars are the slices, falling and fading as the settings say, and light up while it is really going.
+What link::Classes/FxDevicePanel:: puts at the top of Stammer's window: one interval as a strip of steps, a sixteenth each, the beats numbered (more than one interval when the hold runs past its end). Top to bottom:
+
+table::
+## strong::steps:: || the run it holds, lit in yellow from the step where it goes, fainter as code::chance:: falls, the chance written on the first step; small flags where it would decide again inside the hold
+## strong::in:: || the input as it passed, once sound comes in; the box is the slice it catches, just before it goes; the dashed bar under it, while code::gridVary:: is up, runs from the shortest slice it may take to the longest; the hatching is what code::insert:: mutes while it goes (all of it in code::gate::)
+## strong::repeats:: || a block a repeat: as tall as it keeps (code::decay::, code::level::), as low as it falls (code::pitchFall::), the slice drawn backwards in about as many as code::backwards:: says; where the last one ends up written after it; the band, when the filter is on
+::
+
+While it runs, a line follows the server's own count (the reply's extras: going or not, which repeat, where the interval is, backwards or not, the slice it took) and the repeat it is really playing lights up in orange.
+
+table::
+## strong::in the display:: || strong::does::
+## click a step || where it goes (code::offset::)
+## drag along the steps || how long (code::hold::)
+## the wheel on the steps || the slice (code::grid::)
+## double click the steps || back to offset 0, hold 4
+## drag the repeats up and down || how far each falls (code::pitchFall::), shift for fine
+## the wheel on the repeats || how much each keeps (code::decay::)
+## double click the repeats || back to 0 st and 90 %
+::
 
 It draws from the object's settings and the replies its meters bring, so it is only live while the window is running; link::Classes/FxParamView:: has the rest.
 
@@ -19,4 +38,8 @@ A view to go in.
 INSTANCEMETHODS::
 
 METHOD:: hint
-What the hint bar says over it.
+What the hint bar says over it: which lane is under the pointer, its gestures and the values they move.
+ARGUMENT:: x
+Where the pointer is, across the view.
+ARGUMENT:: y
+Where the pointer is, down the view.
