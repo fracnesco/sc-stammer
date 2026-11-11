@@ -2,6 +2,8 @@
 
 **It catches a slice of what is playing and repeats it, falling, fading or backwards - a beat repeat, running anywhere a UGen does, with a window.** A SuperCollider extension.
 
+![Stammer's window](images/stammer.png)
+
 ```supercollider
 s.boot;
 Ndef(\drums, { Stammer.ar(Decay2.ar(Impulse.ar(4), 0.002, 0.1) * WhiteNoise.ar(0.4 ! 2), \stammer) }).play;
@@ -122,6 +124,7 @@ Every parameter is a property: `b.bpm`, `b.bpm = ...`. These also work by name, 
 | [examples/stammer-demo.scd](examples/stammer-demo.scd) | a walkthrough, one block at a time |
 | [install.scd](install.scd) | the symlink, a check, an uninstall |
 | [sc-stammer.quark](sc-stammer.quark) | the quark manifest |
+| [images/](images/) | the screenshots in this README |
 
 ## License
 
