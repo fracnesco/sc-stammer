@@ -126,6 +126,9 @@ Stammer : FxParamUnit {
 		]
 	}
 
+	// a card in a strip (FxDeviceCard)
+	*cardKeys { ^#[\chance, \grid, \hold, \decay] }
+
 	*isActive { |key, unit|
 		if ((key == \filterFreq) or: { key == \filterWidth }) { ^unit.get(\filterOn) == true };
 		^true
